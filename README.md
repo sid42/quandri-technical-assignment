@@ -3,7 +3,7 @@ Hello, this is my submission for the Quandri Technical Assignment. The solution 
 completes all the steps (1 through 4) listed in the original prompt. Additionally, it uses an Elasticsearch instance to run reverse-indexed search queries on the scientist information scraped from Wikipedia. It also allows the user to add the information for additional scientists. `simple_test.py` is used to test the happy paths.
 
 ### Screenshots: 
-The Robot index scientist information for scientists provided in `SCIENTISTS` and printing it out in human readable format.
+The Robot indexes scientist information for scientists provided in the `SCIENTISTS` list and prints it out in human readable format.
 ![Output Scientist information](demo/1.png)
 
 The Robot can also search for scientist based on query text and add information for a new scientist: 
