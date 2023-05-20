@@ -23,7 +23,7 @@ class Robot:
         self.name = name
         self.br = Selenium()
         self.es = Elasticsearch([{'host': ES_HOST, 'port': 9200, 'scheme':'http'}])
-        self.bot_cmd = BotCmd(self.cmd_search_func)
+        self.bot_cmd = BotCmd(self.cmd_search_func, self.get_scientists_info_from_wiki)
         self.es.indices.create(index=INDEX_NAME, ignore=[ALREADY_EXISTS_ERR])
 
     def say_hello(self):
@@ -32,7 +32,7 @@ class Robot:
     def say_goodbye(self):
         print("Goodbye, my name is", self.name, "\n")
 
-    def get_scientists_info(self, scientists):
+    def get_scientists_info_from_wiki(self, scientists):
         self.br.open_available_browser()
         for scientist in scientists: 
             self.br.go_to(WIKI_LINK.format(scientist.replace(" ", "_")))
@@ -57,6 +57,7 @@ class Robot:
             }
 
             self.es.index(index=INDEX_NAME, body=result)
+        br.close_browser()
 
     def print_scientists_info(self):
         query = {
