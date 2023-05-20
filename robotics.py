@@ -56,8 +56,8 @@ class Robot:
                 "age" : relativedelta(dod, dob).years
             }
 
-            self.es.index(index=INDEX_NAME, body=result)
-        br.close_browser()
+            self.es.index(index=INDEX_NAME, document=result)
+        self.br.close_browser()
 
     def print_scientists_info(self):
         query = {
