@@ -19,8 +19,6 @@ services:
         hard: 65536
     cap_add:
       - IPC_LOCK
-    # volumes:
-    #   - elasticsearch-data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
       - 9300:9300
@@ -29,18 +27,12 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-      # start_period: 40s
-
-  robot: 
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      - ES_HOST=elasticsearch
-    depends_on: 
-      elasticsearch:
-        condition: service_healthy
-
-# volumes:
-#   elasticsearch-data:
-#     driver: local
+  # robot: 
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - ES_HOST=elasticsearch
+  #   depends_on: 
+  #     elasticsearch:
+  #       condition: service_healthy

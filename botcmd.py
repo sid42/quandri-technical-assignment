@@ -1,7 +1,7 @@
 import cmd
 
 class BotCmd(cmd.Cmd):
-    intro = "Now that we have all the information about the scientists, we can look up scientists by their relevant information, like Google search. \nTry doing \"search Germany\" to see all scientists from Germany. Use help or ? to see all commands."
+    intro = "Now that we have all the information about the scientists, we can look up scientists by their relevant information, like Google search. \nTry doing \"search English\" to see all English scientists. Use help or ? to see all commands."
     prompt = "(bot) "
     
     def __init__(self, search_func): 
