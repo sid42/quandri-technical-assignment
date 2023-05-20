@@ -27,7 +27,7 @@ Instead of running step 4 with `python3 main.py`, `pytest` can be run to test th
 
 ## Improvements
 1. Multi-threading: I attempted to parallelize the indexing of multiple scientist Wikipedia pages but opted to leave it out to avoid over-engineering the project and prevent the code from being too difficult to read (not worth the perfomance gain). Also, each thread needed a new browser instance which was too much for my machine to handle! 
-2. Data Layer Abstraction: The Robot class is closely coupled with Elasticsearch data store. Ideally, I would have liked to abstract the data processing into its own layer and have it plugged into the Robot class. 
+2. Data Layer Abstraction: The Robot class is closely coupled with the Elasticsearch data store. Ideally, I would have liked to abstract the data processing into its own layer and have it plugged into the Robot class. 
 3. Dockerize the Application: I was close to getting the Python app fully dockerized so that it would be easy to test. However, I ran into to stdin issues when trying to accept user input and decided to investigate this in the future. 
 
 Thank you! 
